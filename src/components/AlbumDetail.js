@@ -47,7 +47,7 @@ const AlbumDetail = ({ album }) => {
             </CardSection>
             <CardSection>
                 <Button onPress={() => handlePress(url)}>
-                    Buy Now
+                    Buy Now 
                 </Button>
             </CardSection>
         </Card> 

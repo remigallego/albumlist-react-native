@@ -29,7 +29,6 @@ import {
         marginRight: 5
     },
     textStyle: {
-        fontFamily: "", // Temporary hack for react-native issue #15114 
         alignSelf: "center",
         color: "#007AFF",
         fontSize: 16,
