@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import {
     ScrollView, 
-    Text
+    Text,
+    StyleSheet,
+    View
   } from 'react-native';
 import AlbumDetail from './AlbumDetail'
 import Card from './Card'
@@ -15,9 +17,7 @@ export default class AlbumList extends Component {
   componentWillMount() {
     Axios.get("http://remigallego.com/albums.json")
       .then((res) => {
-        console.log(res.data);
-        let albums = res.data;
-        this.setState({albums: albums})
+        this.setState({albums: res.data})
       })
   }
   
@@ -30,8 +30,23 @@ export default class AlbumList extends Component {
   render() {
     return( 
       <ScrollView>
-        {this.state.albums.length === 0 ? <Text>Loading...</Text> : this.renderAlbums()}
+        {this.state.albums.length === 0 ? 
+          <Text style={styles.loadingTextStyle} >
+             Loading...
+          </Text> 
+          : 
+          this.renderAlbums()}
       </ScrollView>     
     )   
   } 
 };   
+
+const styles = StyleSheet.create({
+  loadingTextStyle: {
+    fontSize: 35,
+    textAlign: 'center',
+    justifyContent: "center",
+    marginTop: 250,
+    opacity: 0.6
+  }
+})

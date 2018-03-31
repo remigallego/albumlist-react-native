@@ -17,7 +17,7 @@ import Card from './src/components/Card'
 
 const App  = () => (
   <View style={styles.container} >
-      <Header headerText={"Albums"} />
+      <Header headerText={"Albums by The Algorithm"} />
       <AlbumList />
   </View>
 )
